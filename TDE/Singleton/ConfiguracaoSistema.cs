@@ -1,23 +1,27 @@
-public class ConfiguracaoSistema{
 
-    private static ConfiguracaoSistema instancia;
+namespace Singleton{
 
-    public string NomeSistema {get; private set;}
-    public string Versao {get; private set;}
+    public class ConfiguracaoSistema{
 
-    private ConfiguracaoSistema(){
+        private static ConfiguracaoSistema instancia;
 
-        NomeSistema = "Sistema de Notificações";
-        Versao = "1.0";
-    }
+        public string NomeSistema {get; private set;}
+        public string Versao {get; private set;}
 
-    public static ConfiguracaoSistema GetInstancia(){
-        
-        if(instancia == null)
-        {
-            instancia = new ConfiguracaoSistema();
+        private ConfiguracaoSistema(){
+
+            NomeSistema = "Sistema de Notificações";
+            Versao = "1.0";
         }
-        return instancia;
-    }
 
+        public static ConfiguracaoSistema GetInstancia(){
+            
+            if(instancia == null)
+            {
+                instancia = new ConfiguracaoSistema();
+            }
+            return instancia;
+        }
+
+    }
 }

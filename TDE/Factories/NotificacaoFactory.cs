@@ -1,20 +1,23 @@
 using Interfaces;
 using Models;
 
-public class NotificacaoFactory
-{
-    public static INotificacao Criar(string tipo)
+namespace Factories{
+
+    public class NotificacaoFactory
     {
-        switch (EmitTypeInformation.ToLower())
+        public static INotificacao Criar(string tipo)
         {
-            case "email":
-                return new Email();
-            case "sms":
-                return SMS();
-            case "whatsapp":
-                return new WhatsaApp();
-            default:
-                throw new System.Exception("Tipo de notificação inválido");
+            switch (EmitTypeInformation.ToLower())
+            {
+                case "email":
+                    return new Email();
+                case "sms":
+                    return SMS();
+                case "whatsapp":
+                    return new WhatsaApp();
+                default:
+                    throw new System.Exception("Tipo de notificação inválido");
+            }
         }
     }
 }
