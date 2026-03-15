@@ -1,8 +1,4 @@
-using System.Diagnostics;
-using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices.Marshalling;
-using System.Security.Cryptography.X509Certificates;
-using Interface;
+using Interfaces;
 
 public class SMS: INotificacao
 {

@@ -1,8 +1,4 @@
-using System.Diagnostics;
-using System.Diagnostics.Contracts;
-using System.Runtime.CompilerServices;
-using System.Security.Cryptography.X509Certificates;
-using interfaces;
+using Interfaces;
 
 public class Email: INotificacao
 {

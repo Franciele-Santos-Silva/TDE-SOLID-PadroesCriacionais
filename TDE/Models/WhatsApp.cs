@@ -1,4 +1,4 @@
-using Interface;
+using Interfaces;
 
 public class WhatsApp: INotificacao
 {
@@ -7,3 +7,5 @@ public class WhatsApp: INotificacao
         console.WriteLine("Mensagem enviada pelo WhatsApp");
     }
 }
+
+// OCP - Open/Closed Principle)
