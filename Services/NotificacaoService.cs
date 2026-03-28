@@ -4,18 +4,19 @@ using Factories;
 
 namespace Services
 {
-    public class NotificacaoService
+    public class NotificacaoService : INotificacaoService
     {
         public void EnviarNotificacao(string tipo)
         {
-            if (!Enum.TryParse<TipoNotificacao>(tipo, true, out var tipoEnum))
+            if (!Enum.TryParse<Factories.TipoNotificacao>(tipo, true, out var tipoEnum))
             {
                 throw new ArgumentException($"Tipo de notificação inválido: {tipo}");
             }
 
-            INotificacao notificacao = NotificacaoFactory.CriarNotificacao(tipoEnum);
+            Interfaces.INotificacao notificacao = Factories.NotificacaoFactory.CriarNotificacao(tipoEnum);
 
             notificacao.Enviar();
         }
     }
 }
+
